@@ -1,7 +1,9 @@
-
+import SearchBar from "../components/SearchBar";
 const Dashboard = () => {
     return (
-        <div></div>
+        <div>
+            <SearchBar/>
+        </div>
     )
 }
 

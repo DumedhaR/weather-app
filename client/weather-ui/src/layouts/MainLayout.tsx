@@ -17,7 +17,9 @@ function MainLayout() {
           />
           <h1 className="text-[28px]">Weather App</h1>
         </div>
-        <Outlet />
+        <div className="mt-12">
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>
