@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 function MainLayout() {
   return (
     <div
-      className="relative flex flex-col w-full min-h-screen bg-no-repeat bg-contain bg-fixed"
+      className="relative flex flex-col w-full min-h-screen bg-no-repeat bg-contain bg-fixed gap-18"
       style={{ backgroundImage: `url('/images/BgMain4x.svg')` }}
     >
       <div className="absolute inset-0 bg-black opacity-5 pointer-events-none z-10" />
