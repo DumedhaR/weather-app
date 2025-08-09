@@ -1,5 +1,5 @@
 import SearchBar from "../components/SearchBar";
-import WeatherCrad from "../components/WeatherCard";
+import WeatherCard from "../components/WeatherCard";
 const Dashboard = () => {
   return (
     <div className="flex flex-col gap-16">
@@ -7,8 +7,8 @@ const Dashboard = () => {
         <SearchBar />
       </div>
       <div className="flex flex-wrap justify-center items-center gap-10">
-        <WeatherCrad />
-        <WeatherCrad />
+        <WeatherCard />
+        <WeatherCard />
       </div>
     </div>
   );

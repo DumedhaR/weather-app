@@ -17,7 +17,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px; 
+  /* font-size: 16px;  */
 }
 
 body {
@@ -27,4 +27,20 @@ body {
   text-align: center;
   min-height: 100vh;
   overscroll-behavior: none;
+}
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded;
+  }
+}
+
+@layer utilities {
+  .skew-15deg {
+    transform: skewY(-15deg);
+  }
 }

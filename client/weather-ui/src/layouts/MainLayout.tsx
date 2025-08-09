@@ -8,7 +8,7 @@ function MainLayout() {
       style={{ backgroundImage: `url('/images/BgMain4x.svg')` }}
     >
       <div className="absolute inset-0 bg-black opacity-5 pointer-events-none z-10" />
-      <div className="relative z-20 flex-grow">
+      <div className="relative z-20 flex-grow px-6">
         <div className="flex items-center justify-center gap-3 mt-18 font-semibold">
           <img
             src="/images/Logo4x.svg"
