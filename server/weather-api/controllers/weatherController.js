@@ -17,16 +17,16 @@ exports.getAllWeatherData = catchAsync(async (req, res, next) => {
 
       // return cached data if available.
       if (cachedData) {
-        return { cityId, data: cachedData, fromCache: true };
+        return { cityId, weatherData: cachedData, fromCache: true };
       }
 
       // fetch fresh data from the OpenWeatherMap API if there is no cached data.
-      const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=metric&appid=${apiKey}`;
 
       try {
         const response = await axios.get(url);
         cache.set(cityId, response.data); // cache success response data for the current city ID.
-        return { cityId, data: response.data, fromCache: false };
+        return { cityId, weatherData: response.data, fromCache: false };
       } catch (err) {
         console.error(`Error fetching city ${cityId}:`, err.message);
         return { cityId, error: "Failed to fetch weather data" }; // return sanitized error response.
@@ -35,8 +35,8 @@ exports.getAllWeatherData = catchAsync(async (req, res, next) => {
   );
 
   // separate successful and failed responses.
-  const success = weatherData.filter((r) => r.data);
-  const failed = weatherData.filter((r) => !r.data);
+  const success = weatherData.filter((r) => r.weatherData);
+  const failed = weatherData.filter((r) => !r.weatherData);
 
   // send response with final results.
   res.status(200).json({

@@ -4,13 +4,14 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { WeatherProvider } from "./contexts/WeatherContext";
 import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Dashboard";
 import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
-    <>
+    <WeatherProvider>
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -21,7 +22,7 @@ function App() {
           {/* fallback redirect */}
         </Routes>
       </Router>
-    </>
+    </WeatherProvider>
   );
 }
 

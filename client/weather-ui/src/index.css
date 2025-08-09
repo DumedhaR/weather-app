@@ -13,6 +13,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-clouds: #378de7;
+  --bg-rain: #6149cb;
+  --bg-snow: #71b4e6;
+  --bg-atmosphere: #9c3939;
+  --bg-clear:#40b681;
+  --bg-drizzle: #de934e;
+  --bg-thunderstorm: #c061c7;
+  --bg-primary:#6c5dd3;
+
 }
 
 html {
@@ -31,6 +41,13 @@ body {
 
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
+  --color-clouds: var(--bg-clouds);
+  --color-rain: var(--bg-rain);
+  --color-snow: var(--bg-snow);
+  --color-atmosphere: var(--bg-atmosphere);
+  --color-clear: var(--bg-clear);
+  --color-thunderstorm: var(--bg-thunderstorm);
+  --color-primary: var(--bg-primary);
 }
 
 @layer components {
