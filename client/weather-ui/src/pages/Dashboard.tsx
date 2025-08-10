@@ -4,6 +4,7 @@ import { useWeather } from "../hooks/useWeather";
 import { getAllWeatherData } from "../services/weatherService";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingSping from "../components/LoadingSpin";
+import SearchBar from "../components/SearchBar";
 
 const Dashboard = () => {
   const { weatherData, setWeatherData } = useWeather();
@@ -29,22 +30,23 @@ const Dashboard = () => {
     fetchAllWeather();
   }, [setWeatherData, getAccessTokenSilently]);
 
-  if (isLoading) {
-    return <LoadingSping />;
-  }
-
   return (
-    <div className="flex">
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-10">
-        {weatherData.map((city) => {
-          console.log(city);
-          return (
-            <div className="" key={city.id}>
-              <WeatherCard {...city} />
-            </div>
-          );
-        })}
-      </div>
+    <div className="flex flex-col gap-16">
+      <SearchBar />
+      {isLoading ? (
+        <LoadingSping />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-10">
+          {weatherData.map((city) => {
+            console.log(city);
+            return (
+              <div className="" key={city.id}>
+                <WeatherCard {...city} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

@@ -31,7 +31,7 @@ export interface WeatherData {
   };
 }
 
-export interface WeatherApiResponse {
+export interface WeatherResponse {
   status: string;
   results: number;
   data: {
@@ -43,6 +43,12 @@ export interface WeatherApiResponse {
     cityId: string;
     error: string;
   }[];
+}
+
+export interface weatherByCityResponse {
+  status: string;
+  weatherData: WeatherData;
+  fromCache: boolean;
 }
 
 export interface WeatherRecord {

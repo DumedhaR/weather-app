@@ -2,15 +2,17 @@ import cardBgImg from "../assets/images/BgCard4x.svg";
 import arrowIcon from "../assets/icons/Arrow4x.svg";
 import { FiX } from "react-icons/fi";
 import { type WeatherRecord } from "../types/weatherData";
+import { Link } from "react-router-dom";
 
 const WeatherCard = (cardData: WeatherRecord) => {
   return (
-    <div className="flex flex-col rounded-md overflow-hidden shadow-md relative">
+    <div className="flex flex-col rounded-lg overflow-hidden shadow-md relative">
       <button className="absolute top-2 right-2 p-1" aria-label="Close">
         <FiX className="w-5 h-5 text-white" />
       </button>
-      <div
-        className={`flex p-10 w-full gap-4  bg-no-repeat bg-bottom bg-contain`}
+      <Link
+        to={`/dashboard/${cardData.id}`}
+        className={`flex p-10 w-full gap-4  bg-no-repeat bg-bottom bg-cover`}
         style={{
           backgroundImage: `url(${cardBgImg})`,
           backgroundColor: `var(--bg-${cardData.weatherType})`,
@@ -39,7 +41,7 @@ const WeatherCard = (cardData: WeatherRecord) => {
             <p>{`Temp Max: ${cardData.maxTemp}°c`}</p>
           </div>
         </div>
-      </div>
+      </Link>
       <div className="flex bg-[#383b47] justify-between p-8 gap-5 items-center">
         <ul className="space-y-1 text-left">
           <li>

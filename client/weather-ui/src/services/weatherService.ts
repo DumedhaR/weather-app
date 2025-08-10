@@ -1,6 +1,7 @@
 import apiClient from "./apiClient";
 import {
-  type WeatherApiResponse,
+  type WeatherResponse,
+  type weatherByCityResponse,
   type WeatherData,
   type WeatherRecord,
 } from "../types/weatherData";
@@ -38,7 +39,7 @@ const transformData = (rawData: WeatherData): WeatherRecord => {
 };
 
 export const getAllWeatherData = async (accessToken: string) => {
-  const response = await apiClient.get<WeatherApiResponse>("/api/weather", {
+  const response = await apiClient.get<WeatherResponse>("/api/weather", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
@@ -55,4 +56,24 @@ export const getAllWeatherData = async (accessToken: string) => {
   );
   console.log(weatherRecords);
   return weatherRecords;
+};
+
+export const getWeatherByCity = async (accessToken: string, cityId: string) => {
+  const response = await apiClient.get<weatherByCityResponse>(
+    `/api/weather/${cityId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+
+  if (response.data.status !== "success") {
+    throw new Error("API error or unexpected status");
+  }
+
+  const weatherRecord: WeatherRecord = transformData(response.data.weatherData);
+
+  console.log(weatherRecord);
+  return weatherRecord;
 };

@@ -41,9 +41,6 @@ const LandingPage = () => {
       <p className="text-md md:text-lg mt-5">
         Check the Latest Weather Updates <br /> Anytime, Anywhere
       </p>
-      {/* <button className="bg-white text-md md:text-lg text-indigo-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition mt-10">
-                Get Started
-            </button> */}
       <LoginButton />
     </div>
   );

@@ -5,10 +5,10 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Enter a city"
-          className="bg-[#1e2027] p-3 pr-36 rounded-md outline-none w-full"
+          className="bg-[#1e2027] p-3 pr-36 rounded-lg outline-none w-full"
           disabled
         />
-        <button className="absolute bg-[#6c5dd3] right-0 top-0 rounded-md py-3 px-6 font-semibold shadow-sm hover:bg-[#6c5dd3]/90 transition">
+        <button className="absolute bg-[#6c5dd3] right-0 top-0 rounded-lg py-3 px-6 font-semibold shadow-sm hover:bg-[#6c5dd3]/90 transition">
           Add City
         </button>
       </div>

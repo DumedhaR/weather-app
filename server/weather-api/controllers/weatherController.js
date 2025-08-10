@@ -66,7 +66,7 @@ exports.getWeatherByCity = catchAsync(async (req, res, next) => {
   }
   res.status(200).json({
     status: "success",
-    data: result.weatherData,
+    weatherData: result.weatherData,
     fromCache: result.fromCache,
   });
 });

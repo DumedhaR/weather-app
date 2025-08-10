@@ -1,12 +1,11 @@
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
-import SearchBar from "../components/SearchBar";
 
 function MainLayout() {
   return (
     <div
-      className="relative flex flex-col w-full min-h-screen bg-no-repeat bg-contain bg-fixed gap-18"
+      className="relative flex flex-col w-full min-h-screen bg-no-repeat bg-contain bg-fixed gap-20"
       style={{
         backgroundImage: `url('/images/BgMain4x.svg')`,
         backgroundPosition: "top center",
@@ -25,10 +24,7 @@ function MainLayout() {
           />
           <h1 className="text-[28px]">Weather App</h1>
         </div>
-        <div className="mt-10">
-          <SearchBar />
-        </div>
-        <div className="mt-16">
+        <div className="mt-12">
           <Outlet />
         </div>
       </div>
