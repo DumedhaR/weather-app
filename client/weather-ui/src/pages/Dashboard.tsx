@@ -3,21 +3,29 @@ import SearchBar from "../components/SearchBar";
 import WeatherCard from "../components/WeatherCard";
 import { useWeather } from "../hooks/useWeather";
 import { getAllWeatherData } from "../services/weatherService";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Dashboard = () => {
   const { weatherData, setWeatherData } = useWeather();
+  const { getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
     const fetchAllWeather = async () => {
       try {
-        const weatherData = await getAllWeatherData();
+        const accessToken = await getAccessTokenSilently({
+          authorizationParams: {
+            audience: "http://localhost:8000",
+            scope: "read:weather",
+          },
+        });
+        const weatherData = await getAllWeatherData(accessToken);
         setWeatherData(weatherData);
       } catch (err) {
         console.error("Failed to load weather forecast data:", err);
       }
     };
     fetchAllWeather();
-  }, [setWeatherData]);
+  }, [setWeatherData, getAccessTokenSilently]);
 
   return (
     <div className="flex flex-col gap-16">

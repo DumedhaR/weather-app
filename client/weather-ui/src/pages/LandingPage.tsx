@@ -1,10 +1,38 @@
 import { WiDayCloudy } from "react-icons/wi";
-import LoginButton from "../components/LoginButten";
+import LoginButton from "../components/LoginButton";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const LandingPage = () => {
+  const { isAuthenticated, isLoading } = useAuth0();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (isAuthenticated) {
+        navigate("/dashboard");
+      }
+    }
+  }, [isAuthenticated, isLoading, navigate]);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center w-screen h-screen">
+        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (isAuthenticated) {
+    // If user is logged in but navigate() hasn't happened yet
+    return null;
+  }
+
   return (
     <div
-      className="w-full h-screen flex gap-1 items-center justify-center flex-col bg-gradient-to-br 
-        from-blue-600 via-indigo-600 to-violet-600 text-white"
+      className="w-full h-screen flex gap-1 items-center justify-center flex-col bg-gradient-to-br
+      from-blue-600 via-indigo-600 to-violet-600 text-white"
     >
       <WiDayCloudy className="text-8xl md:text-9xl font-semibold" />
       <h2 className="text-4xl md:text-5xl font-semibold ">Welcome to</h2>

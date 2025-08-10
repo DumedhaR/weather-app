@@ -37,8 +37,12 @@ const transformData = (rawData: WeatherData): WeatherRecord => {
   return transformedData;
 };
 
-export const getAllWeatherData = async () => {
-  const response = await apiClient.get<WeatherApiResponse>("/api/weather");
+export const getAllWeatherData = async (accessToken: string) => {
+  const response = await apiClient.get<WeatherApiResponse>("/api/weather", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
   if (response.data.status !== "success") {
     throw new Error("API error or unexpected status");
