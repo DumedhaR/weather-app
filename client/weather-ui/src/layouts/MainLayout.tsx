@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
+import ProfileMenu from "../components/ProfileMenu";
 
 function MainLayout() {
   return (
@@ -11,6 +12,9 @@ function MainLayout() {
       }}
     >
       <div className="absolute inset-0 bg-black opacity-4 pointer-events-none z-10" />
+      <div className="absolute top-4 right-4 z-50">
+        <ProfileMenu />
+      </div>
       <div className="relative z-20 flex-grow px-6 md:px-12">
         <div className="flex items-center justify-center gap-3 mt-18 font-semibold">
           <img
