@@ -10,8 +10,11 @@ const WeatherCard = (cardData: WeatherRecord) => {
         <FiX className="w-5 h-5 text-white" />
       </button>
       <div
-        className={`flex bg-${cardData.weatherType} p-10 w-full gap-4  bg-no-repeat bg-bottom bg-contain`}
-        style={{ backgroundImage: `url(${cardBgImg})` }}
+        className={`flex p-10 w-full gap-4  bg-no-repeat bg-bottom bg-contain`}
+        style={{
+          backgroundImage: `url(${cardBgImg})`,
+          backgroundColor: `var(--bg-${cardData.weatherType})`,
+        }}
       >
         <div className="flex flex-col flex-1 justify-between">
           <div>

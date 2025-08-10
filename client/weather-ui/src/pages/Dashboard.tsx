@@ -24,8 +24,9 @@ const Dashboard = () => {
       <div>
         <SearchBar />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-10">
         {weatherData.map((city) => {
+          console.log(city);
           return (
             <div className="" key={city.id}>
               <WeatherCard {...city} />
