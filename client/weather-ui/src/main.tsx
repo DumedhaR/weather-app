@@ -10,6 +10,7 @@ createRoot(document.getElementById("root")!).render(
     clientId="ELtQP2ceqW6Sl2lOU3htJTLCpqzg9TCX"
     authorizationParams={{
       redirect_uri: window.location.origin,
+      audience: "http://localhost:8000",
     }}
   >
     <App />

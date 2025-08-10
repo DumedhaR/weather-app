@@ -5,7 +5,7 @@ import { type WeatherRecord } from "../types/weatherData";
 
 const WeatherCard = (cardData: WeatherRecord) => {
   return (
-    <div className="flex flex-col rounded-md overflow-hidden shadow-md relative ">
+    <div className="flex flex-col rounded-md overflow-hidden shadow-md relative">
       <button className="absolute top-2 right-2 p-1" aria-label="Close">
         <FiX className="w-5 h-5 text-white" />
       </button>

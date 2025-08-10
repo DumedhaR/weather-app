@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
+import SearchBar from "../components/SearchBar";
 
 function MainLayout() {
   return (
@@ -25,6 +26,9 @@ function MainLayout() {
           <h1 className="text-[28px]">Weather App</h1>
         </div>
         <div className="mt-10">
+          <SearchBar />
+        </div>
+        <div className="mt-16">
           <Outlet />
         </div>
       </div>

@@ -3,6 +3,7 @@ import LoginButton from "../components/LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import LoadingSping from "../components/LoadingSpin";
 
 const LandingPage = () => {
   const { isAuthenticated, isLoading } = useAuth0();
@@ -19,7 +20,7 @@ const LandingPage = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center w-screen h-screen">
-        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        <LoadingSping />
       </div>
     );
   }
