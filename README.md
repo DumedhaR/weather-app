@@ -113,14 +113,14 @@ VITE_API_BASE_URL = <your-back-end-server-base-url>
 ```ini
 NODE_ENV = <system-environment>
 PORT = <server-port-number>
-OPENWEATHERMAP_API_KEY = <your-api-key>
+OPENWEATHER_API_KEY = <your-api-key>
 AUTH0_AUDIENCE = <your-auth0-server-api-audience>
 AUTH0_ISSUER_BASE_URL = <https://your-auth0-domain-here/>
 CLIENT_URL = <your-client-app-base-url>
 
 ```
 
-### Note
+### ⭕ Note
 
-The environment variables in `.env.example` are provided for testing and evaluation only.
+The environment variables in `.env.example` are provided for `testing` and `evaluation` only.
 To use the application, rename `.env.example` to `.env` and update the values with your own API keys and credentials.
