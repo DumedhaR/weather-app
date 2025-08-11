@@ -24,23 +24,12 @@ A full-stack weather application featuring real-time weather data fetching and s
 
 **Frontend**
 
-- React (TypeScript)
-- Vite
-- Material UI
-- Tailwind CSS
-- Axios
-- Auth0 React SDK
+- React (TypeScript), Vite, Material UI, Tailwind CSS, Axios, Auth0 React SDK
 
 **Backend**
 
-- Node.js
-- Express
-- dotenv
-- morgan
-- node-cache
-- Axios
+- Node.js, Express, dotenv, morgan, node-cache, Axios
 
 **Authentication**
 
-- Auth0
-- JWT (JSON Web Tokens)
+- Auth0, JWT (JSON Web Tokens)
