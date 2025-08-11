@@ -170,5 +170,3 @@ is no longer supported for new API keys, and has been removed from their documen
 ```
 GET https://api.openweathermap.org/data/2.5/weather?id={CITY_ID}&units=metric&appid={API_KEY}
 ```
-
-instead.
