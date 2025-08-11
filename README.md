@@ -122,8 +122,5 @@ CLIENT_URL = <your-client-app-base-url>
 
 ### Note
 
-```
 The environment variables in **.env.example** are provided for testing and evaluation only.
 To use the application, rename **.env.example** to **.env** and update the values with your own API keys and credentials.
-
-```
