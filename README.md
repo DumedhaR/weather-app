@@ -19,3 +19,28 @@ A full-stack weather application featuring real-time weather data fetching and s
 - Auth0 issues JWT tokens which the client sends with every API request.
 - The backend validates the token before serving cached or fresh weather data.
 - Frontend displays weather info dynamically in a clean, responsive UI.
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+- React (TypeScript)
+- Vite
+- Material UI
+- Tailwind CSS
+- Axios
+- Auth0 React SDK
+
+**Backend**
+
+- Node.js
+- Express
+- dotenv
+- morgan
+- node-cache
+- Axios
+
+**Authentication**
+
+- Auth0
+- JWT (JSON Web Tokens)
