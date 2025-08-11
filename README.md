@@ -36,7 +36,8 @@ A full-stack weather application featuring real-time weather data fetching and s
 
 ## 📂 Project Structure
 
-`weather-app/
+```plaintext
+weather-app/
 ├── client/               # Frontend
 │   └── weather-ui/
 │       ├── public/
@@ -64,4 +65,4 @@ A full-stack weather application featuring real-time weather data fetching and s
 │           └── .env
 │
 └── README.md
-`
+```
