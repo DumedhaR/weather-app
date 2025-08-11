@@ -5,8 +5,8 @@ const { auth, requiredScopes } = require("express-oauth2-jwt-bearer");
  * Extract payload and, attach it to request (req.auth).
  */
 exports.jwtCheck = auth({
-  audience: "http://localhost:8000",
-  issuerBaseURL: "https://dev-1yprsmnyle7lg0yn.us.auth0.com/",
+  audience: process.env.AUTH0_AUDIENCE,
+  issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
   tokenSigningAlg: "RS256",
 });
 

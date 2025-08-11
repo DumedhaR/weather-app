@@ -5,6 +5,7 @@ import { getAllWeatherData } from "../services/weatherService";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoadingSping from "../components/LoadingSpin";
 import SearchBar from "../components/SearchBar";
+import { AUTH0_AUDIENCE } from "../config";
 
 const Dashboard = () => {
   const { weatherData, setWeatherData } = useWeather();
@@ -16,7 +17,7 @@ const Dashboard = () => {
       try {
         const accessToken = await getAccessTokenSilently({
           authorizationParams: {
-            audience: "http://localhost:8000",
+            audience: AUTH0_AUDIENCE,
           },
         });
 

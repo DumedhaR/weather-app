@@ -8,6 +8,7 @@ import LoadingSping from "../components/LoadingSpin";
 import arrowIcon from "../assets/icons/Arrow4x.svg";
 import { FiArrowLeft } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { AUTH0_AUDIENCE } from "../config";
 
 const ViewWeather = () => {
   const { cityId } = useParams<{ cityId: string }>();
@@ -25,7 +26,7 @@ const ViewWeather = () => {
         try {
           const accessToken = await getAccessTokenSilently({
             authorizationParams: {
-              audience: "http://localhost:8000",
+              audience: AUTH0_AUDIENCE,
             },
           });
           const data = await getWeatherByCity(accessToken, cityId);

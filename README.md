@@ -113,10 +113,10 @@ VITE_API_BASE_URL = <your-back-end-server-base-url>
 ```ini
 NODE_ENV = <system-environment>
 PORT = <server-port-number>
+CLIENT_URL = <your-client-app-base-url>
 OPENWEATHER_API_KEY = <your-api-key>
 AUTH0_AUDIENCE = <your-auth0-server-api-audience>
 AUTH0_ISSUER_BASE_URL = <https://your-auth0-domain-here/>
-CLIENT_URL = <your-client-app-base-url>
 
 ```
 
