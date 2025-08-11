@@ -120,7 +120,37 @@ CLIENT_URL = <your-client-app-base-url>
 
 ```
 
-### ⭕ Note
+#### ⭕ Note
 
 The environment variables in `.env.example` are provided for `testing` and `evaluation` only.
 To `test` the application, rename `.env.example` to `.env`, then either use the values as-is or update them with your own API keys and credentials.
+
+### 4️⃣ Run the Application
+
+#### Start backend:
+
+```bash
+cd server/weather-api
+npm start
+
+```
+
+#### Start frontend:
+
+```bash
+cd client/weather-ui
+npm run dev
+
+```
+
+App will be available at:
+
+```http://localhost:5173
+
+```
+
+## 📌 API Endpoints
+
+- **GET** `/api/weather` – Fetch weather for all available cities.
+
+- **GET** `/api/weather/:cityId` – Fetch weather for a specific city.
