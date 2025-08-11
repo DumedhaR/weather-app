@@ -36,7 +36,7 @@ const Dashboard = () => {
       {isLoading ? (
         <LoadingSping />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto gap-6 sm:gap-8 md:gap-10">
           {weatherData.map((city) => {
             console.log(city);
             return (

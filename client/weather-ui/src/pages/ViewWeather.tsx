@@ -44,28 +44,28 @@ const ViewWeather = () => {
   }
 
   return (
-    <div className="flex flex-col rounded-md overflow-hidden shadow-md relative max-w-5xl mx-auto">
+    <div className="flex flex-col rounded-md overflow-hidden shadow-md relative max-w-5xl mx-auto text-[15px] md:text-[16px]">
       <Link
-        to={"/dashboard"}
+        to={"/weather"}
         className="absolute top-4 left-4 p-1"
         aria-label="Close"
       >
         <FiArrowLeft className="w-5 h-5 text-white" />
       </Link>
       <div
-        className={`flex flex-col p-12 w-full gap-8 bg-no-repeat bg-bottom`}
+        className={`flex flex-col p-6 md:p-12 w-full gap-5 md:gap-8 bg-no-repeat bg-bottom overflow-hidden`}
         style={{
           backgroundColor: `var(--bg-${weatherView.weatherType})`,
         }}
       >
         <div className="flex flex-col text-center justify-center">
           <div>
-            <h3 className="text-[28px] font-semibold capitalize">{`${weatherView.cityName}, ${weatherView.country}`}</h3>
-            <p className="mt-1">{weatherView.dateTime}</p>
+            <h3 className="text-xl md:text-[28px] font-semibold capitalize">{`${weatherView.cityName}, ${weatherView.country}`}</h3>
+            <p className="mt-1 text-sm md:text-base">{weatherView.dateTime}</p>
           </div>
         </div>
         <div className="flex justify-center items-center text-left font-semibold mb-2">
-          <div className="flex flex-col items-center justify-center gap-4 pr-16 border-r-2  border-white/50">
+          <div className="flex flex-col items-center justify-center gap-4 pr-8 md:pr-16 border-r-2  border-white/50 ">
             <img
               src={`/icons/${weatherView.weatherType}.svg`}
               alt={`${weatherView.weatherDesc}`}
@@ -73,14 +73,14 @@ const ViewWeather = () => {
             />
             <p className="capitalize">{weatherView.weatherDesc}</p>
           </div>
-          <div className="pl-16">
-            <p className="text-[56px] pb-3">{`${weatherView.temp}°c`}</p>
+          <div className="pl-8 md:pl-16 ">
+            <p className="text-[48px] md:text-[56px] pb-3">{`${weatherView.temp}°c`}</p>
             <p>{`Temp Min: ${weatherView.minTemp}°c`}</p>
             <p>{`Temp Max: ${weatherView.maxTemp}°c`}</p>
           </div>
         </div>
       </div>
-      <div className="flex bg-[#383b47] p-12 gap-5 items-center justify-center gap-x-20">
+      <div className="flex bg-[#383b47] p-6 md:p-12 items-center justify-between md:justify-center gap-x-3 md:gap-x-20 overflow-hidden">
         <ul className="space-y-1 text-left">
           <li>
             <span className="font-semibold">Pressure:</span>
@@ -95,7 +95,7 @@ const ViewWeather = () => {
             {` ${weatherView.visibility}km`}
           </li>
         </ul>
-        <div className="flex flex-col items-center gap-2 border-x-2 border-gray-500/50 h-full px-20">
+        <div className="flex flex-col items-center gap-2 border-x-2 border-gray-500/50 h-full px-3 md:px-20">
           <img
             src={arrowIcon}
             alt="Wind Direction"

@@ -12,7 +12,7 @@ const LandingPage = () => {
   useEffect(() => {
     if (!isLoading) {
       if (isAuthenticated) {
-        navigate("/dashboard");
+        navigate("/weather");
       }
     }
   }, [isAuthenticated, isLoading, navigate]);
@@ -26,7 +26,6 @@ const LandingPage = () => {
   }
 
   if (isAuthenticated) {
-    // If user is logged in but navigate() hasn't happened yet
     return null;
   }
 

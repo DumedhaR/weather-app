@@ -16,7 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/dashboard" element={<MainLayout />}>
+          <Route path="/weather" element={<MainLayout />}>
             <Route index element={<Dashboard />} />
             <Route path=":cityId" element={<ViewWeather />} />
           </Route>
