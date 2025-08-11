@@ -36,31 +36,32 @@ A full-stack weather application featuring real-time weather data fetching and s
 
 ## 📂 Project Structure
 
-weather-app/
-├── client/ # Frontend
-│ └── weather-ui/
-│ ├── public/
-│ └── src/
-│ ├── assets/
-│ ├── components/
-│ ├── contexts/
-│ ├── hooks/
-│ ├── layouts/
-│ ├── pages/
-│ ├── services/
-│ ├── styles/
-│ ├── types/
-│ ├── utils/
-│ └── .env
+`weather-app/
+├── client/               # Frontend
+│   └── weather-ui/
+│       ├── public/
+│       └── src/
+│           ├── assets/
+│           ├── components/
+│           ├── contexts/
+│           ├── hooks/
+│           ├── layouts/
+│           ├── pages/
+│           ├── services/
+│           ├── styles/
+│           ├── types/
+│           ├── utils/
+│           └── .env
 │
-├── server/ # Backend
-│ └── weather-api/
-│ ├── public/
-│ └── src/
-│ ├── controller/
-│ ├── data/
-│ ├── routes/
-│ ├── utils/
-│ └── .env
+├── server/               # Backend
+│   └── weather-api/
+│       ├── public/
+│       └── src/
+│           ├── controller/
+│           ├── data/
+│           ├── routes/
+│           ├── utils/
+│           └── .env
 │
 └── README.md
+`
