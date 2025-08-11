@@ -147,7 +147,6 @@ App will be available at:
 
 ```
 http://localhost:5173
-
 ```
 
 ## 📌 API Endpoints
