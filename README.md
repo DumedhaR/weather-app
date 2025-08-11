@@ -157,7 +157,7 @@ http://localhost:5173
 
 ## 🗒️ Final Note
 
-- The **OpenWeatherMap API** endpoint for fetching weather data for **\multiple cities** in a single request:
+- The **OpenWeatherMap API** endpoint for fetching weather data for **multiple cities** in a single request:
 
 ```
 GET http://api.openweathermap.org/data/2.5/group?id={CITY_IDS}&units=metric&appid={API_KEY}
