@@ -75,3 +75,55 @@ weather-app/
 git clone https://github.com/DumedhaR/weather-app.git
 cd weather-app
 ```
+
+### 2️⃣ Install Dependencies
+
+#### Frontend:
+
+```bash
+cd client/weather-ui
+npm install
+
+```
+
+#### Backend:
+
+```bash
+cd server/weather-api
+npm install
+
+```
+
+### 3️⃣ Environment Variables
+
+Create `.env` files in both `client/weather-ui` and `server/weather-api`.
+
+#### client/weather-ui/.env
+
+```ini
+VITE_AUTH0_DOMAIN = <your-auth0-domain>
+VITE_AUTH0_CLIENT_ID = <your-auth0-client-id>
+VITE_AUTH0_AUDIENCE = <your-auth0-server-api-audience>
+VITE_API_BASE_URL = <your-back-end-server-base-url>
+
+```
+
+#### server/weather-api/.env
+
+```ini
+NODE_ENV = <system-environment>
+PORT = <server-port-number>
+OPENWEATHERMAP_API_KEY = <your-api-key>
+AUTH0_AUDIENCE = <your-auth0-server-api-audience>
+AUTH0_ISSUER_BASE_URL = <https://your-auth0-domain-here/>
+CLIENT_URL = <your-client-app-base-url>
+
+```
+
+### Note
+
+```
+The environment variables in **.env.example** are provided for testing and evaluation only.
+To use the application, rename **.env.example** to **.env** and update the values with your own API keys and credentials.
+
+```
