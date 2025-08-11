@@ -12,7 +12,7 @@ const WeatherCard = (cardData: WeatherRecord) => {
       </button>
       <Link
         to={`/weather/${cardData.id}`}
-        className={`flex p-6 sm:p-8 lg:p-10 w-full gap-x-3 md:gap-x-5 bg-no-repeat bg-bottom bg-cover overflow-hidden`}
+        className={`flex p-6 sm:p-8 lg:p-10 w-full gap-x-3 md:gap-x-5 bg-no-repeat bg-bottom bg-contain overflow-hidden`}
         style={{
           backgroundImage: `url(${cardBgImg})`,
           backgroundColor: `var(--bg-${cardData.weatherType})`,
