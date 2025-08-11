@@ -41,28 +41,28 @@ weather-app/
 ├── client/               # Frontend
 │   └── weather-ui/
 │       ├── public/
-│       └── src/
-│           ├── assets/
-│           ├── components/
-│           ├── contexts/
-│           ├── hooks/
-│           ├── layouts/
-│           ├── pages/
-│           ├── services/
-│           ├── styles/
-│           ├── types/
-│           ├── utils/
-│           └── .env
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/
+│       │   ├── contexts/
+│       │   ├── hooks/
+│       │   ├── layouts/
+│       │   ├── pages/
+│       │   ├── services/
+│       │   ├── styles/
+│       │   ├── types/
+│       │   └── utils/
+│       └── .env
 │
 ├── server/               # Backend
 │   └── weather-api/
 │       ├── public/
-│       └── src/
-│           ├── controller/
-│           ├── data/
-│           ├── routes/
-│           ├── utils/
-│           └── .env
+│       ├── src/
+│       │   ├── controller/
+│       │   ├── data/
+│       │   ├── routes/
+│       │   └── utils/
+│       └── .env
 │
 └── README.md
 ```
