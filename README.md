@@ -155,7 +155,7 @@ http://localhost:5173
 
 - **GET** `/api/weather/:cityId` – Fetch weather for a specific city.
 
-## ⭕ Final Note
+## 🗒️ Final Note
 
 - The **OpenWeatherMap API** endpoint for fetching weather data for **\*multiple cities** in a single request:
 
