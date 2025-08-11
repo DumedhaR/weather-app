@@ -154,3 +154,21 @@ http://localhost:5173
 - **GET** `/api/weather` – Fetch weather for all available cities.
 
 - **GET** `/api/weather/:cityId` – Fetch weather for a specific city.
+
+## ⭕ Final Note
+
+- The **OpenWeatherMap API** endpoint for fetching weather data for **\*multiple cities** in a single request:
+
+```
+GET http://api.openweathermap.org/data/2.5/group?id={CITY_IDS}&units=metric&appid={API_KEY}
+```
+
+is no longer supported for new API keys, and has been removed from their documentation.
+
+- As a result, this project fetches weather data for **cities** using:
+
+```
+GET https://api.openweathermap.org/data/2.5/weather?id={CITY_ID}&units=metric&appid={API_KEY}
+```
+
+instead.
