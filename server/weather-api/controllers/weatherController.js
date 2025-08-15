@@ -31,6 +31,37 @@ const getCachedOrFetch = async (cityId) => {
   }
 };
 
+const filterResponseData = (data, query) => {
+  let { limit, page, fields } = query;
+
+  let filteredData = data;
+  limit = limit ? limit * 1 : 4; // set default values for limit & page
+  page = page ? page * 1 : 1;
+
+  const startIndex = (page - 1) * limit;
+  const endIndex = limit * page;
+  filteredData = filteredData.slice(startIndex, endIndex); //paginate data
+
+  if (fields) {
+    const filterFields = fields.split(","); //filter user requested fields
+
+    filteredData = filteredData.map((record) => {
+      let filteredFields = {};
+      for (let field of filterFields) {
+        // Check explicitly for null/undefined since 0 can be valid value
+        if (
+          record.weatherData[field] !== null &&
+          record.weatherData[field] !== undefined
+        )
+          filteredFields[field] = record.weatherData[field];
+      }
+      return { ...record, weatherData: filteredFields };
+    });
+  }
+
+  return filteredData;
+};
+
 exports.getAllWeatherData = catchAsync(async (req, res, next) => {
   // fetch or serve cached weather data for each city ID in parallel.
   const weatherData = await Promise.all(
@@ -38,8 +69,10 @@ exports.getAllWeatherData = catchAsync(async (req, res, next) => {
   );
 
   // separate successful and failed responses.
-  let success = weatherData.filter((r) => r.weatherData);
-  let failed = weatherData.filter((r) => !r.weatherData);
+  let success = weatherData.filter((record) => record.weatherData);
+  let failed = weatherData.filter((record) => !record.weatherData);
+
+  success = filterResponseData(success, req.query);
 
   // send response with final results.
   let payload = {
