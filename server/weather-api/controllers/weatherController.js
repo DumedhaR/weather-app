@@ -35,7 +35,7 @@ const filterResponseData = (data, query) => {
   let { limit, page, fields } = query;
 
   let filteredData = data;
-  limit = limit ? limit * 1 : 4; // set default values for limit & page
+  limit = limit ? limit * 1 : 6; // set default values for limit & page
   page = page ? page * 1 : 1;
 
   const startIndex = (page - 1) * limit;
