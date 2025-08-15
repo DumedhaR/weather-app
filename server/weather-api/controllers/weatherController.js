@@ -38,16 +38,17 @@ exports.getAllWeatherData = catchAsync(async (req, res, next) => {
   );
 
   // separate successful and failed responses.
-  const success = weatherData.filter((r) => r.weatherData);
-  const failed = weatherData.filter((r) => !r.weatherData);
+  let success = weatherData.filter((r) => r.weatherData);
+  let failed = weatherData.filter((r) => !r.weatherData);
 
   // send response with final results.
-  const payload = {
+  let payload = {
     status: "success",
     results: success.length,
     data: success,
     failed: failed.length > 0 ? failed : undefined,
   };
+
   res.status(200).json(payload);
 });
 
